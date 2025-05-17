@@ -1,4 +1,4 @@
-package com.jpm.springboot.coffee_shop.domain;
+package com.jpm.coffeeshop.supply.domain;
 
 public enum ItemCategory {
     COFFEE_BEANS,

@@ -1,7 +1,7 @@
-package com.jpm.springboot.coffee_shop.service;
+package com.jpm.coffeeshop.supply.service;
 
-import com.jpm.springboot.coffee_shop.domain.ItemCategory;
-import com.jpm.springboot.coffee_shop.domain.SupplyItem;
+import com.jpm.coffeeshop.supply.domain.ItemCategory;
+import com.jpm.coffeeshop.supply.domain.SupplyItem;
 
 import java.util.List;
 import java.util.Optional;

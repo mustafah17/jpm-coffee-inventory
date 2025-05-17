@@ -1,4 +1,4 @@
-package com.jpm.springboot.coffee_shop;
+package com.jpm.coffeeshop.supply;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

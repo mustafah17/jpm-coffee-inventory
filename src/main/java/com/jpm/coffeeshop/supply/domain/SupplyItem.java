@@ -1,4 +1,4 @@
-package com.jpm.springboot.coffee_shop.domain;
+package com.jpm.coffeeshop.supply.domain;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -26,8 +26,8 @@ public class SupplyItem {
     @Enumerated(EnumType.STRING)
     private ItemCategory category;
 
-    private int stock;
-    private int reorderLevel;
+    private Integer stock;
+    private Integer reorderLevel;
 
     @Embedded
     private Supplier supplier;

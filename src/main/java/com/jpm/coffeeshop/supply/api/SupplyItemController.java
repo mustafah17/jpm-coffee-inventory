@@ -1,10 +1,11 @@
-package com.jpm.springboot.coffee_shop.api;
+package com.jpm.coffeeshop.supply.api;
 
-import com.jpm.springboot.coffee_shop.domain.ItemCategory;
-import com.jpm.springboot.coffee_shop.domain.SupplyItem;
-import com.jpm.springboot.coffee_shop.exception.SupplyItemNotFoundException;
-import com.jpm.springboot.coffee_shop.service.SupplyItemService;
-import com.jpm.springboot.coffee_shop.util.CsvSupplyItemParser;
+import com.jpm.coffeeshop.supply.domain.ItemCategory;
+import com.jpm.coffeeshop.supply.domain.SupplyItem;
+import com.jpm.coffeeshop.supply.exception.SupplyItemNotFoundException;
+import com.jpm.coffeeshop.supply.service.SupplyItemService;
+import com.jpm.coffeeshop.supply.util.CsvSupplyItemParser;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,14 +25,10 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/supply-items")
 public class SupplyItemController {
     private final SupplyItemService service;
-
-
-    public SupplyItemController(SupplyItemService supplyItemService) {
-        this.service = supplyItemService;
-    }
 
     // 1. CRUD interface to manage supply items by Item ID.
     @PostMapping

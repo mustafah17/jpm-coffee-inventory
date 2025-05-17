@@ -1,22 +1,20 @@
-package com.jpm.springboot.coffee_shop.service;
+package com.jpm.coffeeshop.supply.service;
 
-import com.jpm.springboot.coffee_shop.exception.SupplyItemNotFoundException;
-import com.jpm.springboot.coffee_shop.domain.ItemCategory;
-import com.jpm.springboot.coffee_shop.domain.SupplyItem;
-import com.jpm.springboot.coffee_shop.repository.SupplyItemRepository;
+import com.jpm.coffeeshop.supply.exception.SupplyItemNotFoundException;
+import com.jpm.coffeeshop.supply.domain.ItemCategory;
+import com.jpm.coffeeshop.supply.domain.SupplyItem;
+import com.jpm.coffeeshop.supply.repository.SupplyItemRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class SupplyItemServiceImpl implements SupplyItemService {
 
     private final SupplyItemRepository repository;
-
-    public SupplyItemServiceImpl(SupplyItemRepository repository) {
-        this.repository = repository;
-    }
 
     @Override
     public SupplyItem createSupplyItem(SupplyItem item) {

@@ -1,8 +1,8 @@
-package com.jpm.springboot.coffee_shop.util;
+package com.jpm.coffeeshop.supply.util;
 
-import com.jpm.springboot.coffee_shop.domain.ItemCategory;
-import com.jpm.springboot.coffee_shop.domain.Supplier;
-import com.jpm.springboot.coffee_shop.domain.SupplyItem;
+import com.jpm.coffeeshop.supply.domain.ItemCategory;
+import com.jpm.coffeeshop.supply.domain.Supplier;
+import com.jpm.coffeeshop.supply.domain.SupplyItem;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
