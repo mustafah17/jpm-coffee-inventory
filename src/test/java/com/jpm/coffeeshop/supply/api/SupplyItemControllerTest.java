@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -111,5 +113,20 @@ public class SupplyItemControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].name").value("Milk"));
+    }
+
+    @Test
+    void testImportFromCsv() throws Exception {
+        String csv = "name,category,stock,reorderLevel,supplierName,supplierContact\n" +
+                "Sugar,SUGAR,30,5,testSupplier,07777\n" +
+                "Milk,MILK,15,7,testSupplier,07777\n";
+
+        MockMultipartFile file = new MockMultipartFile("file", csv.getBytes());
+
+        mockMvc.perform(MockMvcRequestBuilders.multipart(API_SUPPLY_ITEMS + "/import").file(file))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.length()").value(2))
+                .andExpect(jsonPath("$[0].name").value("Sugar"))
+                .andExpect(jsonPath("$[1].name").value("Milk"));
     }
 }
