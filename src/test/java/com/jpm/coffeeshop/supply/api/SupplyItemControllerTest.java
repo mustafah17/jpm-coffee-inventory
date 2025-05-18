@@ -117,9 +117,11 @@ public class SupplyItemControllerTest {
 
     @Test
     void testImportFromCsv() throws Exception {
-        String csv = "name,category,stock,reorderLevel,supplierName,supplierContact\n" +
-                "Sugar,SUGAR,30,5,testSupplier,07777\n" +
-                "Milk,MILK,15,7,testSupplier,07777\n";
+        String csv = """
+                name,category,stock,reorderLevel,supplierName,supplierContact
+                Sugar,SUGAR,30,5,testSupplier,07777
+                Milk,MILK,15,7,testSupplier,07777
+                """;
 
         MockMultipartFile file = new MockMultipartFile("file", csv.getBytes());
 
