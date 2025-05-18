@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class SupplyItemControllerTest {
+class SupplyItemControllerTest {
 
     static final String API_SUPPLY_ITEMS = "/api/supply-items";
 

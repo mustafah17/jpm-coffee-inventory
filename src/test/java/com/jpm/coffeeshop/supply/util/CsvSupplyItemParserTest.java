@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CsvSupplyItemParserTest {
+class CsvSupplyItemParserTest {
 
     @Test
     void parseValidCsvFile() throws Exception {
