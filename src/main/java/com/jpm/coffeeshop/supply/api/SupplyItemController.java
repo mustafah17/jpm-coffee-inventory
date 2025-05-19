@@ -26,7 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 
-@Tag(name = "Supply Items", description = "API for managing coffe shop supply items")
+@Tag(name = "Supply Items", description = "API for managing coffee shop supply items")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/supply-items")
