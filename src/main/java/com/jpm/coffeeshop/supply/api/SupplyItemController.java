@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -28,6 +29,7 @@ import java.util.List;
 
 @Tag(name = "Supply Items", description = "API for managing coffee shop supply items")
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequiredArgsConstructor
 @RequestMapping("/api/supply-items")
 public class SupplyItemController {
@@ -55,7 +57,7 @@ public class SupplyItemController {
     }
 
     @PutMapping("/{id}")
-    @Operation(summary = "Update supply team by ID")
+    @Operation(summary = "Update supply item by ID")
     public SupplyItem update(@PathVariable Long id, @RequestBody SupplyItem item) {
         return service.updateSupplyItem(id, item);
     }

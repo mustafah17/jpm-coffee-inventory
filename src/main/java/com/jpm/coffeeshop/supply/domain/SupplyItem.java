@@ -1,6 +1,6 @@
 package com.jpm.coffeeshop.supply.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class SupplyItem {
 
     @Id
-    @JsonIgnore
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long itemID;
 
